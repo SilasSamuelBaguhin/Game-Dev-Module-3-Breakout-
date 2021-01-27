@@ -40,7 +40,7 @@ function StartState:update(dt)
                 highScores = self.highScores
             })
         else
-            gStateMachine:change('high-scores', {
+            gStateMachine:change('high-Scrs', {
                 highScores = self.highScores
             })
         end
@@ -54,16 +54,16 @@ end
 
 function StartState:render()
     -- title
-    love.graphics.setFont(gFonts['large'])
+    love.graphics.setFont(gFonts['lrg'])
     love.graphics.printf("BREAKOUT", 0, VIRTUAL_HEIGHT / 3,
         VIRTUAL_WIDTH, 'center')
     
     -- instructions
-    love.graphics.setFont(gFonts['medium'])
+    love.graphics.setFont(gFonts['mdm'])
 
     -- if we're highlighting 1, render that option blue
     if highlighted == 1 then
-        love.graphics.setColor(103, 255, 255, 255)
+        love.graphics.setColor(103/255, 255/255, 255/255, 255/255)
     end
     love.graphics.printf("START", 0, VIRTUAL_HEIGHT / 2 + 70,
         VIRTUAL_WIDTH, 'center')
@@ -73,7 +73,7 @@ function StartState:render()
 
     -- render option 2 blue if we're highlighting that one
     if highlighted == 2 then
-        love.graphics.setColor(103, 255, 255, 255)
+        love.graphics.setColor(103/255, 255/255, 255/255, 255/255)
     end
     love.graphics.printf("HIGH SCORES", 0, VIRTUAL_HEIGHT / 2 + 90,
         VIRTUAL_WIDTH, 'center')
